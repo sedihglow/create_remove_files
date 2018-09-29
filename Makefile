@@ -1,10 +1,10 @@
 BIN = ./a.out
 CC=gcc
-CCFLAGS = -I ./ -I ../err_handle/ -I ../convnum/ -c -Wall -Wextra -pthread 
+CCFLAGS = -I ./ -I ./err_handle/ -I ./convnum/ -c -Wall -Wextra -pthread 
 CCFLAGS+= -m64 -O0 -g -pedantic -std=c99
 LDFLAGS = -pthread -m64
 
-SRCS=$(wildcard ./*.c) $(wildcard ../err_handle/*.c) $(wildcard ../convnum/*.c)
+SRCS=$(wildcard ./*.c) $(wildcard ./err_handle/*.c) $(wildcard ./convnum/*.c)
 
 OBJS=$(SRCS:.c=.o)
 
@@ -31,7 +31,7 @@ debug:					# GNU debugger
 .PHONY: clean
 clean:					# clean the directory
 						$(info -- Cleaning The Directory --)
-						rm -rf ./*.o ../err_handle/*.o ../convnum/*.o ./nd ./a.out
+						rm -rf ./*.o ./err_handle/*.o ./convnum/*.o ./nd ./a.out
 .PHONY: run
 run:					# run the program as follows
 						$(info -- Running Program --)
